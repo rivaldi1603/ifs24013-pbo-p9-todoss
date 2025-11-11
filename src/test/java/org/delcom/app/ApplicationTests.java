@@ -1,4 +1,4 @@
-package org.delcom.todos;
+package org.delcom.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.SpringApplication;
@@ -30,7 +30,7 @@ class ApplicationTest {
 		// Test bahwa Spring context bisa dimuat
 		assertDoesNotThrow(() -> {
 			// Test basic class loading
-			Class<?> clazz = Class.forName("org.delcom.todos.Application");
+			Class<?> clazz = Class.forName("org.delcom.app.Application");
 			assertNotNull(clazz);
 		});
 	}

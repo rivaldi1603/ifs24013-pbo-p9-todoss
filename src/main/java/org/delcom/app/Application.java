@@ -1,4 +1,4 @@
-package org.delcom.todos;
+package org.delcom.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

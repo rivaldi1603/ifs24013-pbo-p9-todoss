@@ -1,4 +1,4 @@
-package org.delcom.todos.configs;
+package org.delcom.app.configs;
 
 import org.springframework.boot.web.error.ErrorAttributeOptions;
 import org.springframework.boot.webmvc.error.ErrorAttributes;

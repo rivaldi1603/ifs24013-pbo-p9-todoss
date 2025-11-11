@@ -1,4 +1,4 @@
-package org.delcom.todos.configs;
+package org.delcom.app.configs;
 
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
