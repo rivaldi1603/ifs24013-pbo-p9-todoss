@@ -43,3 +43,4 @@ public class StartupInfoLogger implements ApplicationListener<ApplicationReadyEv
         System.out.println();
     }
 }
+
