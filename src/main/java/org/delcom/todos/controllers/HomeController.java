@@ -1,4 +1,4 @@
-package org.delcom.app.controllers;
+package org.delcom.todos.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

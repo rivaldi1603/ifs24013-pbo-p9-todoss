@@ -1,4 +1,4 @@
-package org.delcom.app.configs;
+package org.delcom.todos.configs;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 

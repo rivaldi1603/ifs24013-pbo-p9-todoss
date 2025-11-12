@@ -1,4 +1,4 @@
-package org.delcom.app.configs;
+package org.delcom.todos.configs;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
