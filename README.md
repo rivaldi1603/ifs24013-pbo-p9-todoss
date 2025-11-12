@@ -5,7 +5,7 @@
 ### 04-11-2025
 
 - Memperbarui kebutuhan paket
-- baru
+
 ### 29-10-2025
 
 - Melakukan inisialisasi proyek
