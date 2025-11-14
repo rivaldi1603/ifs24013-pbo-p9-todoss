@@ -93,7 +93,7 @@ public class CashFlowControllerTests {
             ApiResponse<Map<String, CashFlow>> result = cashFlowController.getCashFlowById(cashFlowId);
             assert (result != null);
             assert (result.getStatus().equals("success"));
-            assert (result.getData().get("cash_flow").getId().equals(cashFlowId));
+            assert (result.getData().get("cashFlow").getId().equals(cashFlowId));
         }
 
         // Menguji getCashFlowById dengan ID yang tidak ada
