@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(name = "cash_flows") // Sesuai dengan endpoint /cash-flows di PDF
+@Table(name = "cash_flows") 
 public class CashFlow {
 
     @Id
@@ -39,7 +39,7 @@ public class CashFlow {
     public CashFlow() {
     }
 
-    // Constructor untuk data (sesuai test case)
+    // Constructor untuk data
     public CashFlow(String type, String source, String label, Integer amount, String description) {
         this.type = type;
         this.source = source;
@@ -106,7 +106,7 @@ public class CashFlow {
         this.description = description;
     }
 
-    // Lifecycle callbacks (sesuai test case)
+    // Lifecycle callbacks
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();

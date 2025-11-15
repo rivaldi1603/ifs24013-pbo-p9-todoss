@@ -1,6 +1,5 @@
 package org.delcom.app.controllers;
 
-
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -11,7 +10,7 @@ import org.delcom.app.services.CashFlowService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/cash-flows") // Sesuai dengan app.rest di PDF
+@RequestMapping("/api/cash-flows") 
 public class CashFlowController {
 
     private final CashFlowService cashFlowService;
@@ -22,7 +21,6 @@ public class CashFlowController {
 
     @PostMapping
     public ApiResponse<Map<String, UUID>> createCashFlow(@RequestBody CashFlow cashFlow) {
-        // Validasi sesuai test case
         if (cashFlow.getType() == null || cashFlow.getType().trim().isEmpty() ||
             cashFlow.getSource() == null || cashFlow.getSource().trim().isEmpty() ||
             cashFlow.getLabel() == null || cashFlow.getLabel().trim().isEmpty() ||
@@ -39,15 +37,12 @@ public class CashFlowController {
                 cashFlow.getDescription()
         );
 
-        // Response message dari PDF
         return new ApiResponse<>("success", "Berhasil menambahkan data", Map.of("id", newCashFlow.getId()));
     }
 
     @GetMapping
     public ApiResponse<Map<String, List<CashFlow>>> getAllCashFlows(@RequestParam(required = false) String search) {
         List<CashFlow> cashFlows = cashFlowService.getAllCashFlows(search);
-        // Response message dan key "cash_flows" dari PDF
-        // Test case untuk getAllCashFlows tidak memeriksa key ini, jadi kita biarkan sesuai PDF
         return new ApiResponse<>("success", "Berhasil mengambil data", Map.of("cash_flows", cashFlows));
     }
 
@@ -58,9 +53,7 @@ public class CashFlowController {
         if (cashFlow == null) {
             return new ApiResponse<>("fail", "Data cash flow tidak ditemukan", null); // Message disesuaikan
         }
-        
-        // --- PERUBAHAN DI SINI ---
-        // Diubah dari "cash_flow" menjadi "cashFlow" agar lolos test bawaan Anda
+
         return new ApiResponse<>("success", "Berhasil mengambil data", Map.of("cashFlow", cashFlow));
     }
 
@@ -73,7 +66,6 @@ public class CashFlowController {
 
     @PutMapping("/{id}")
     public ApiResponse<CashFlow> updateCashFlow(@PathVariable UUID id, @RequestBody CashFlow cashFlow) {
-        // Validasi sesuai test case
         if (cashFlow.getType() == null || cashFlow.getType().trim().isEmpty() ||
             cashFlow.getSource() == null || cashFlow.getSource().trim().isEmpty() ||
             cashFlow.getLabel() == null || cashFlow.getLabel().trim().isEmpty() ||
@@ -92,10 +84,9 @@ public class CashFlowController {
         );
 
         if (updatedCashFlow == null) {
-            return new ApiResponse<>("fail", "Data cash flow tidak ditemukan", null); // Message disesuaikan
+            return new ApiResponse<>("fail", "Data cash flow tidak ditemukan", null);
         }
 
-        // Response message dari PDF (data: null)
         return new ApiResponse<>("success", "Berhasil memperbarui data", null);
     }
 
@@ -104,9 +95,9 @@ public class CashFlowController {
         boolean deleted = cashFlowService.deleteCashFlow(id);
 
         if (!deleted) {
-            return new ApiResponse<>("fail", "Data cash flow tidak ditemukan", null); // Message disesuaikan
+            return new ApiResponse<>("fail", "Data cash flow tidak ditemukan", null);
         }
-        // Response message dari PDF
+
         return new ApiResponse<>("success", "Berhasil menghapus data", null);
     }
 }

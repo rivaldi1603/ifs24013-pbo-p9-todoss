@@ -14,7 +14,6 @@ public interface CashFlowRepository extends JpaRepository<CashFlow, UUID> {
     /**
      * Mencari CashFlow berdasarkan keyword.
      * Query ini akan mencari di field type, source, label, dan description.
-     * Sesuai dengan kebutuhan service test.
      */
     @Query("SELECT c FROM CashFlow c WHERE LOWER(c.type) LIKE LOWER(CONCAT('%', :keyword, '%')) " +
            "OR LOWER(c.source) LIKE LOWER(CONCAT('%', :keyword, '%')) " +

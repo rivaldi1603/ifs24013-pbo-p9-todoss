@@ -64,7 +64,7 @@ GET {{BaseUrl}}/cash-flows?search=Pribadi
 }
 ###
 
-@cashFlowId = {{GetAllCashFlows.response.body.data.cashFLows[0].id}}
+@cashFlowId = {{GetAllCashFlows.response.body.data.cash_flows[0].id}}
 
 # @name GetCashFlowById
 GET {{BaseUrl}}/cash-flows/{{cashFlowId}}

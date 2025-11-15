@@ -25,7 +25,6 @@ public class CashFlowService {
     }
 
     public List<CashFlow> getAllCashFlows(String search) {
-        // Sesuai logika di test case
         if (search != null && !search.trim().isEmpty()) {
             return cashFlowRepository.findByKeyword(search);
         }
@@ -43,8 +42,6 @@ public class CashFlowService {
     @Transactional
     public CashFlow updateCashFlow(UUID id, String type, String source, String label, Integer amount, String description) {
         CashFlow cashFlow = cashFlowRepository.findById(id).orElse(null);
-
-        // Sesuai logika di test case, return null jika tidak ada
         if (cashFlow != null) {
             cashFlow.setType(type);
             cashFlow.setSource(source);
@@ -58,7 +55,6 @@ public class CashFlowService {
 
     @Transactional
     public boolean deleteCashFlow(UUID id) {
-        // Sesuai logika di test case
         if (cashFlowRepository.existsById(id)) {
             cashFlowRepository.deleteById(id);
             return true;
